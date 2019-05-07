@@ -159,3 +159,4 @@ MonoBehaviour:
   bullet: {fileID: 8323942162759187227, guid: 52612f3ed3728a44d8f539eac84aadfa, type: 3}
   fire_Rate: 3
   next_Fire: 0
+  reload_Bar: {fileID: 0}

@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    //bullet prefab
     public GameObject bullet;
+    //fire rate
     public float fire_Rate;
     public float next_Fire;
 
@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
             GameManager.total_Ammo--;
             GameObject bull = Instantiate(bullet, transform.position, transform.rotation);
             next_Fire = Time.time + fire_Rate;
+
         }
     }
 }
