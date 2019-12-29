@@ -10,11 +10,13 @@ public class PlayerManager : MonoBehaviour
 
     ScavengeGameManager the_SGM;
 
+    bool is_hit;
+
     private void Start()
     {
         the_SGM = FindObjectOfType<ScavengeGameManager>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         FaceMouse();
         //Store the current horizontal input in the float moveHorizontal.
@@ -29,7 +31,7 @@ public class PlayerManager : MonoBehaviour
         Vector3 mouse_Position = Input.mousePosition;
         mouse_Position = Camera.main.ScreenToWorldPoint(mouse_Position);
 
-        Vector2 face_Direction = new Vector2(mouse_Position.x, mouse_Position.y);
+        Vector2 face_Direction = new Vector2(mouse_Position.x-transform.position.x, mouse_Position.y - transform.position.y);
 
         transform.right = face_Direction;
     }
@@ -51,6 +53,15 @@ public class PlayerManager : MonoBehaviour
         {
             the_SGM.fuel_Gathered += Random.Range(15, 30);//get random amount of scrap from 15 - 30 from 15 - 30
             Destroy(other.gameObject);
+        }
+        if (other.GetComponent<Zombie>() != null)
+        {
+            is_hit = true;
+            print("hit");
+        }
+        if (other.name == "ExitPoint")
+        {
+            FindObjectOfType<ScavengeGameManager>().ScavengeOver();
         }
     }
 }
