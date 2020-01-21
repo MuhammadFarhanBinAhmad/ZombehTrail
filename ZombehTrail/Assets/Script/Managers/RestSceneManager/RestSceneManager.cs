@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class RestSceneManager : MonoBehaviour
 {
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    public List<string> scene_Name = new List<string>();
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     public void ChangeScene(string name)
     {
-        int I = Random.Range(0, scene_Name.Count - 1);
-        SceneManager.LoadScene(scene_Name[I]);
+        SceneManager.LoadScene(name);
     }
 }
