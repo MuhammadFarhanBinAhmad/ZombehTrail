@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   zombie_Name: Zombie
-  zombie_Speed: 0.08
+  zombie_Speed: 0.06

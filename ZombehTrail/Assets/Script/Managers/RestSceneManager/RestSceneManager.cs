@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestSceneManager : MonoBehaviour
+public class RestSceneManager : LocationInfo
 {
-
-    public List<string> scene_Name = new List<string>();
-
-    public void ChangeScene(string name)
+    private void Start()
     {
-        int I = Random.Range(0, scene_Name.Count - 1);
-        SceneManager.LoadScene(scene_Name[I]);
+        print(GameManager.location_Number);
+    }
+    public void ChangeScene(string scene_Name)
+    {
+        int I = GameManager.location_Number;
+        SceneManager.LoadScene("TravelScene");
     }
 }

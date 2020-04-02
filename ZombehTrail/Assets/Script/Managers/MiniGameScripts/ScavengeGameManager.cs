@@ -13,9 +13,7 @@ public class ScavengeGameManager : MonoBehaviour
     public List<GameObject> end_Text = new List<GameObject>();
     bool time_End;
     //Amount of item gathered
-    public int food_Gathered;
-    public int fuel_Gathered;
-    public int scrap_Gathered;
+    public int food_Gathered, fuel_Gathered, scrap_Gathered;
     public float spawn_Item_Rate;
     //Random object to Spawn
     public GameObject [] drop_Items = new GameObject[3];
@@ -24,24 +22,20 @@ public class ScavengeGameManager : MonoBehaviour
     public int x_Axis;
     //Random object spawn position
     Vector2 centre;
-    Vector2 size;
     //UI Canvas
-    public Text total_Ammo_Text;
-    public Text food_Gathered_Text;
-    public Text fuel_Gathered_Text;
-    public Text scrap_Gathered_Text;
-    public GameObject exit_Open;
+    public Text total_Ammo_Text, food_Gathered_Text, fuel_Gathered_Text, scrap_Gathered_Text;
     //Exit Point
-    public GameObject[] exit_Point = new GameObject[4];
+    public GameObject the_Exit_Point;
     //spawning enemy
-    public List<GameObject> enemy_To_Spawn = new List<GameObject>();
     public float enemy_Spawn_Rate;
+    public EnemySpawnPoint[] the_Enemy_Spawn_Point;
 
     private void Start()
     {
+        the_Enemy_Spawn_Point = FindObjectsOfType<EnemySpawnPoint>();
         scavenge_Current_Time = scavenge_Total_Time;
         InvokeRepeating("SpawnItem", 5, spawn_Item_Rate);
-        InvokeRepeating("SpawnEnemy", 5, enemy_Spawn_Rate);
+        InvokeRepeating("CallSpawnEnemy", 5, enemy_Spawn_Rate);
     }
 
     void FixedUpdate()
@@ -68,35 +62,16 @@ public class ScavengeGameManager : MonoBehaviour
             ExitOpen();
         }
     }
-    void SpawnEnemy()
+    void CallSpawnEnemy()
     {
-        CancelInvoke("SpawnEnemy");
-        Vector3 pos = centre + new Vector2(Random.Range(-x_Axis, x_Axis), Random.Range(-y_Axis, y_Axis));//set pos of random range on X and Y Axis
+        int i = Random.Range(0, the_Enemy_Spawn_Point.Length - 1);
 
-        int i;
-        int zombie_To_Spawn = 0;
-
-        i = Random.Range(0, 10);
-
-        if (i <= 4)
-        {
-            zombie_To_Spawn = 0;
-        }
-        else if (i > 4 && i <=7)
-        {
-            zombie_To_Spawn = 1;
-        }
-        else if (i > 7 && i <= 10)
-        {
-            zombie_To_Spawn = 2;
-        }
-
-        GameObject OBJ = Instantiate(enemy_To_Spawn[zombie_To_Spawn], pos, transform.rotation);
         if (scavenge_Current_Time < 0)
         {
             enemy_Spawn_Rate /= 1.25f;
         }
-        InvokeRepeating("SpawnEnemy", enemy_Spawn_Rate, enemy_Spawn_Rate);
+
+        the_Enemy_Spawn_Point[i].SpawnEnemy();
     }
     void SpawnItem()
     {
@@ -105,11 +80,7 @@ public class ScavengeGameManager : MonoBehaviour
     }
     void ExitOpen()
     {
-        for (int i = 0; i <= exit_Point.Length-1; i++)
-        {
-            exit_Point[i].SetActive(true);
-        }
-        exit_Open.SetActive(true);
+        the_Exit_Point.SetActive(true);
     }
     public void ScavengeOver()
     {

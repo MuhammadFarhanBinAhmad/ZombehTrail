@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Travel_And_PitStop_Scene/TravelScene.unity
     guid: 61f23f0d8f7bd4a4aa1e4f3e3595d1d5
+  - enabled: 1
+    path: Assets/Scenes/Travel_And_PitStop_Scene/RestStop.unity
+    guid: f0180beef2c3a904288f7005df75aa0a
   m_configObjects: {}

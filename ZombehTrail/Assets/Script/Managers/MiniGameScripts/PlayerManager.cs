@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     // player stats and movement
     public float speed;
-    public static int health = 10;
+    public static int health = 15;
 
     ScavengeGameManager the_SGM;
 
@@ -20,8 +20,8 @@ public class PlayerManager : MonoBehaviour
     {
         FaceMouse();
         //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVetical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVetical = Input.GetAxisRaw("Vertical");
         //Use the two store floats to create a new Vector2 variable movement.
         transform.Translate(moveVetical * speed, moveHorizontal * speed, 0);
     }

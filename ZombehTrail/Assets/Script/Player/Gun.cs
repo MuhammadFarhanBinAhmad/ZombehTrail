@@ -15,7 +15,6 @@ public class Gun : MonoBehaviour
             GameManager.total_Ammo--;
             GameObject bull = Instantiate(bullet, transform.position, transform.rotation);
             next_Fire = Time.time + fire_Rate;
-
         }
     }
 }

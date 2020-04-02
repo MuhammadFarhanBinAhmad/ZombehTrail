@@ -20,6 +20,9 @@ public class StatsUI : MonoBehaviour
     public Text total_Scrap_Text;
     public Text total_Ammo_Text;
 
+    //destination status
+
+    public Image status_Bar;
     private void Start()
     {
         stats_Info.SetActive(true);
@@ -28,7 +31,7 @@ public class StatsUI : MonoBehaviour
         the_GM = GetComponent<GameManager>();
 
     }
-    private void Update()
+    public void BasicStats()
     {
         //Text
         LocationLegend_Text.text = "" + the_GM.location_Name;
@@ -38,6 +41,9 @@ public class StatsUI : MonoBehaviour
         total_Food_Text.text = "" + GameManager.total_Food;
         total_Scrap_Text.text = "" + GameManager.total_Scrap;
         total_Ammo_Text.text = "" + GameManager.total_Ammo;
+        status_Bar.fillAmount = the_GM.destination_Distance / the_GM.the_Location_Info.the_Location_Legend[GameManager.location_Number].location_Distance/the_GM.destination_Distance ;
+        print(the_GM.destination_Distance);
+        print(the_GM.the_Location_Info.the_Location_Legend[GameManager.location_Number].location_Distance);
     }
     public void HealthButton()
     {

@@ -94,8 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -328,8 +328,64 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2592600247157651539, guid: 5281cf29428a39a4aa4ed190a76cb750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044993760124833494, guid: 5281cf29428a39a4aa4ed190a76cb750,
+        type: 3}
+      propertyPath: map_Screen
+      value: 
+      objectReference: {fileID: 739165825}
+    - target: {fileID: 4044993760124833494, guid: 5281cf29428a39a4aa4ed190a76cb750,
+        type: 3}
+      propertyPath: stats_Screen
+      value: 
+      objectReference: {fileID: 1200555797}
+    - target: {fileID: 7344701058097676184, guid: 5281cf29428a39a4aa4ed190a76cb750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973126582593808017, guid: 5281cf29428a39a4aa4ed190a76cb750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5281cf29428a39a4aa4ed190a76cb750, type: 3}
+--- !u!1 &708064486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6751016702211375048, guid: 5281cf29428a39a4aa4ed190a76cb750,
+    type: 3}
+  m_PrefabInstance: {fileID: 638490080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &708064487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708064486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334be8110ff8be641b5aafd4964ce71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  the_Location_Legend: []
+--- !u!1 &739165825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2592600247157651539, guid: 5281cf29428a39a4aa4ed190a76cb750,
+    type: 3}
+  m_PrefabInstance: {fileID: 638490080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1200555797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7344701058097676184, guid: 5281cf29428a39a4aa4ed190a76cb750,
+    type: 3}
+  m_PrefabInstance: {fileID: 638490080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1838439392
 GameObject:
   m_ObjectHideFlags: 0
