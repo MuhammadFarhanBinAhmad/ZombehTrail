@@ -421,7 +421,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 417395559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 706115007}
+        m_MethodName: OtherScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &417395559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfbd9a008420b146ae997a479b7eb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scavangeing_Scenes:
+  - Scavenging
+  - Scavenging01
 --- !u!1 &720275873
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,8 +944,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 706115007}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: ScavengingScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1837,7 +1851,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 706115007}
-        m_MethodName: ChangeScene
+        m_MethodName: DepartScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         LocationLegend();
         the_Stats_UI.BasicStats();
-        InvokeRepeating("GameUpdate", 3, 3);
+        InvokeRepeating("GameUpdate", 0, 3);
     }
     public void LocationLegend()
     {
